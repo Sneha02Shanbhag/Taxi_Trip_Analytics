@@ -22,14 +22,44 @@ NYC Yellow Taxi Trip Records (May 2024)
 Source: TLC Trip Record Data  
 Format: `.parquet`
 
-Each record includes:
-- Pickup & Dropoff timestamps  
-- Trip distance  
-- Passenger count  
-- Pickup & drop location IDs  
-- Payment method  
-- Fare, tax, tip, and total amount  
+## 🗂 Dataset Information
 
+This project uses the **NYC Yellow Taxi Trip Record Data (May 2024)** published by the New York City Taxi & Limousine Commission (TLC).
+
+### Dataset Size
+- **Total Rows:** ~3,723,833 trips
+- **Total Columns:** 19 features
+- **Storage Format:** Parquet (`.parquet`)
+- **Database Storage:** Inserted into MongoDB collection (`taxis.taxi_data`)
+
+### Features (Columns)
+
+| Column | Description |
+|--------|-------------|
+| **VendorID** | ID of the taxi vendor company |
+| **tpep_pickup_datetime** | Pickup timestamp of the trip |
+| **tpep_dropoff_datetime** | Dropoff timestamp of the trip |
+| **passenger_count** | Number of passengers on board |
+| **trip_distance** | Distance traveled in miles |
+| **RatecodeID** | Rate code used to calculate fare |
+| **store_and_fwd_flag** | Whether trip record was stored & forwarded |
+| **PULocationID** | Pickup zone ID (NYC zone lookup) |
+| **DOLocationID** | Dropoff zone ID (NYC zone lookup) |
+| **payment_type** | Payment method (1=Credit Card, 2=Cash, etc.) |
+| **fare_amount** | Base fare amount charged |
+| **extra** | Extra charges (late-night, etc.) |
+| **mta_tax** | NYC MTA standard tax |
+| **tip_amount** | Tip paid by passenger |
+| **tolls_amount** | Toll charges added during trip |
+| **improvement_surcharge** | Standard surcharge applied |
+| **total_amount** | Final trip amount billed |
+| **congestion_surcharge** | Congestion zone fee (if applicable) |
+| **Airport_fee** | Additional airport pickup/drop fee |
+
+### Data Characteristics
+- **Time-series dataset** containing city mobility patterns
+- Contains **both numerical + categorical data**
+- Suitable for **trend analysis, demand patterns, fare prediction, and transportation analytics**
 ---
 
 ## 🛠️ Tech Stack
