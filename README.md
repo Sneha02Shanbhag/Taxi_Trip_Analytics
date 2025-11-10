@@ -70,11 +70,15 @@ create a file requirements.txt with following contents:
 - streamlit==1.31.1
 - matplotlib==3.8.2
 - fastparquet==2024.2.0
-
-- pip install -r requirements.txt
+  
+```bash
+pip install -r requirements.txt
+```
+---
 
 ## Run the dashboard
-- streamlit run app.py
-
+```bash
+streamlit run app.py
+```
 - Dashboard will open in your browser:
 - http://localhost:8501
